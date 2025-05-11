@@ -23,6 +23,8 @@ importcsv flowers_db flowers_2024 flower_shop.csv
 ### Step 1: Create the script file
 nano ~/Desktop/tech/scripts/importcsv
 
+
+
 ### Step 2: Paste the following into nano and save:
 #!/bin/bash
 
@@ -34,8 +36,12 @@ DELIM=";"
 
 psql -U $USER -d $DB -c "\copy $TABLE FROM '/Users/$(whoami)/Desktop/$FILENAME' DELIMITER '$DELIM' CSV HEADER ENCODING 'UTF8';"
 
+
+
 ### Step 3: Make the script executable
 chmod +x ~/Desktop/tech/scripts/importcsv
+
+
 
 ### Step 4: Add to PATH (if not already)
 echo 'export PATH=$PATH:$HOME/Desktop/tech/scripts' >> ~/.zprofile
